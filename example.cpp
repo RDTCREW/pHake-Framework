@@ -4,6 +4,7 @@
 int main()
 {
 	ph::info.init("GTA5.exe");
+	
 	ph::player::set_health(99999.f);
 
 	ph::weapon::update();
