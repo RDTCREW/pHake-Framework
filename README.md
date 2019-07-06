@@ -1,15 +1,1 @@
-
-int main()
-{
-	ph::info.init("GTA5.exe");
-	
-	ph::player::set_health(99999.f);
-	
-	ph::weapon::update();
-	ph::weapon::setcurrentammo(9999);
-	
-	ph::vehicle::update();
-	ph::vehicle::set_gravity(-5.f);
-
-	return 0;
-}
+A GTA:Online External Framework 
