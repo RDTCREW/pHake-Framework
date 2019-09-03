@@ -7,7 +7,7 @@ int main()
  
 	ph::Player::Health(ph::Player::Health() + 50.f);
  
-    	ph::Weapon:.Update();
+    	ph::Weapon::Update();
    	ph::Weapon::Ammo(9999);
  
 	ph::Vehicle::Update();
