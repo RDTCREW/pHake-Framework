@@ -6,30 +6,29 @@
 #include "../../Framework/Game/game.h"
 namespace ph
 {
-	struct Info
+	struct info
 	{
 	public:
-		DWORD64 dw_base;
-		DWORD64 dw_world;
-		DWORD64 dw_crosshairid;
-		DWORD64 dw_waypoint_x;
-		DWORD64 dw_waypoint_y;
+		DWORD64 Base;
+		DWORD64 World;
+		DWORD64 CrosshairId;
+		DWORD64 WaypointX;
+		DWORD64 WaypointY;
 
-		DWORD64 dw_player;
-		DWORD64 dw_player_freeze;
-		DWORD64 dw_player_position;
-		DWORD64 dw_player_info;
-		DWORD64 dw_player_info_nearestvehicle;
-		DWORD64 dw_player_info_nearestvehicle_handling;
-		DWORD64 dw_player_info_nearestvehicle_position;
-		DWORD64 dw_player_vehicle;
-		DWORD64 dw_player_vehicle_handling;
-		DWORD64 dw_player_vehicle_position;
-		DWORD64 dw_player_weapon;
-		DWORD64 dw_player_weapon_ammo;
+		DWORD64 Player;
+		DWORD64 PlayerFreeze;
+		DWORD64 Player_Position;
+		DWORD64 Player_Info;
+		DWORD64 Player_Info_NearestvVehicle;
+		DWORD64 Player_Info_NearestVehicle_Handling;
+		DWORD64 Player_Info_NearestVehicle_Position;
+		DWORD64 Player_Vehicle;
+		DWORD64 Player_Vehicle_Handling;
+		DWORD64 Player_Vehicle_Position;
+		DWORD64 Player_WeaponInfo;
+		DWORD64 Player_WeaponInfo_Ammoinfo;
 
-
-		void init(const char* gameName);
+		void Init(const char* gameName);
 	};
-	extern Info info;
+	extern info Info;
 }
