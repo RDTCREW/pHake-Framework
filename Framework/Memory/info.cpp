@@ -1,51 +1,51 @@
 #include "info.h"
 namespace ph
 {
-	void Info::init(const char * gameName)
+	void info::Init(const char* gameName)
 	{
 		while (ph::mem.get_process(gameName) == 0)
 		{
 			Sleep(100);
 		}
 
-		dw_base = ph::mem.get_module(gameName);
+		Base = ph::mem.get_module(gameName);
 
-		while (dw_world == NULL)
+		while (World == NULL)
 		{
-			ReadProcessMemory(mem.hProcess, (PBYTE*)(dw_base + ph::off::ptr_world), &dw_world, sizeof(DWORD64), NULL);
+			ReadProcessMemory(mem.hProcess, (PBYTE*)(Base + ph::Offsets::ptrWorld), &World, sizeof(DWORD64), NULL);
 		}
 
-		while (dw_crosshairid == NULL)
+		while (CrosshairId == NULL)
 		{
-			dw_crosshairid = dw_base + ph::off::ptr_crosshair;
+			CrosshairId = Base + ph::Offsets::ptrCrosshair;
 		}
 
-		while (dw_player_freeze == NULL)
+		while (PlayerFreeze == NULL)
 		{
-			dw_player_freeze = dw_base + ph::off::op_freeze_player;
+			PlayerFreeze = Base + ph::Offsets::opFreeze;
 		}
 
-		while (dw_waypoint_x == NULL && dw_waypoint_y == NULL)
+		while (WaypointX == NULL && WaypointY == NULL)
 		{
-			dw_waypoint_x = dw_base + ph::off::ptr_waypoint_x;
-			dw_waypoint_y = dw_base + ph::off::ptr_waypoint_y;
+			WaypointX = Base + ph::Offsets::ptrWaypointX;
+			WaypointY = Base + ph::Offsets::ptrWaypointY;
 		}
 
-		while (dw_player == NULL)
+		while (Player == NULL)
 		{
-			ReadProcessMemory(mem.hProcess, (PBYTE*)(dw_world + ph::off::off_player), &dw_player, sizeof(DWORD64), NULL);
+			ReadProcessMemory(mem.hProcess, (PBYTE*)(World + ph::Offsets::Player), &Player, sizeof(DWORD64), NULL);
 		}
 
-		while (dw_player_info == NULL)
+		while (Player_Info == NULL)
 		{
-			ReadProcessMemory(mem.hProcess, (PBYTE*)(dw_player + ph::off::off_player_info), &dw_player_info, sizeof(DWORD64), NULL);
+			ReadProcessMemory(mem.hProcess, (PBYTE*)(Player + ph::Offsets::Player_Info), &Player_Info, sizeof(DWORD64), NULL);
 		}
 
-		while (dw_player_position == NULL)
+		while (Player_Position == NULL)
 		{
-			ReadProcessMemory(mem.hProcess, (PBYTE*)(dw_player + ph::off::off_player_pos), &dw_player_position, sizeof(DWORD64), NULL);
+			ReadProcessMemory(mem.hProcess, (PBYTE*)(Player + ph::Offsets::Player_Pos), &Player_Position, sizeof(DWORD64), NULL);
 		}
 	}
 
-	Info info;
+	info Info;
 }
