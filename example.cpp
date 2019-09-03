@@ -1,17 +1,18 @@
 #include "Framework/Memory/info.h"
 #include "Framework/Game/game.h"
-
+ 
 int main()
 {
-	ph::info.init("GTA5.exe");
-	
-	ph::player::set_health(99999.f);
-
-	ph::weapon::update();
-	ph::weapon::set_currentammo(9999);
-
-	ph::vehicle::update();
-	ph::vehicle::set_gravity(-5.f);
-
+	ph::Info.Init("GTA5.exe");
+ 
+	ph::Player::Health(ph::Player::Health() + 50.f);
+ 
+    	ph::Weapon:.Update();
+   	ph::Weapon::Ammo(9999);
+ 
+	ph::Vehicle::Update();
+	ph::Vehicle::Gravity(-5.f);
+       
+ 
 	return 0;
 }
