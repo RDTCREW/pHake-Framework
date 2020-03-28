@@ -1,2 +1,1 @@
-OUTDATED, PLEASE USE THE METHOD IN MY CHEAT
-https://github.com/xhz8s/pHake
+Only for GTA Online 1.5(Steam)
