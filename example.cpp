@@ -5,6 +5,7 @@ int main()
 {
 	GameData game;
 	game.init();
+	game.update();
 	
 	game.player.health(game.player.healthMax()); // Settings Max Health 
 	
