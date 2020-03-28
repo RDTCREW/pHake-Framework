@@ -1,18 +1,18 @@
-#include "Framework/Memory/info.h"
-#include "Framework/Game/game.h"
+#include <iostream>
+#include "SDK/GameInfo.hpp"
  
 int main()
 {
-	ph::Info.Init("GTA5.exe");
- 
-	ph::Player::Health(ph::Player::Health() + 50.f);
- 
-    	ph::Weapon::Update();
-   	ph::Weapon::Ammo(9999);
- 
-	ph::Vehicle::Update();
-	ph::Vehicle::Gravity(-5.f);
-       
- 
+	GameData game;
+	game.init();
+	
+	game.player.health(game.player.healthMax()); // Settings Max Health 
+	
+	game.playerWeaponInfo.bulletDamage(99999.f); // Changing current Weaponstats
+	game.playerWeaponInfo.reloadMP(99999.f);
+	game.playerWeaponInfo.range(99999.f);
+	
+	game.playerVehicle.gravity(25.f); // Changing car gravity
+	
 	return 0;
 }
