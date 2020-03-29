@@ -7,9 +7,9 @@ int main()
 	game.init();
 	game.update();
 	
-	game.player.health(game.player.healthMax()); // Settings Max Health 
+	game.player.health(game.player.healthMax()); // Setting maximum health 
 	
-	game.playerWeaponInfo.bulletDamage(99999.f); // Changing current Weaponstats
+	game.playerWeaponInfo.bulletDamage(99999.f); // Changing stats of current weapon
 	game.playerWeaponInfo.reloadMP(99999.f);
 	game.playerWeaponInfo.range(99999.f);
 	
