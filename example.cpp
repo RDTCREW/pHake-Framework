@@ -1,19 +1,20 @@
 #include <iostream>
-#include "SDK/GameInfo.hpp"
- 
+#include "Memory/Process.h"
+#include "SDK/World.hpp"
+
 int main()
 {
-	GameData game;
-	game.init();
-	game.update();
-	
-	game.player.health(game.player.healthMax()); // Setting maximum health 
-	
-	game.playerWeaponInfo.bulletDamage(99999.f); // Changing stats of current weapon
-	game.playerWeaponInfo.reloadMP(99999.f);
-	game.playerWeaponInfo.range(99999.f);
-	
-	game.playerVehicle.gravity(25.f); // Changing car gravity
-	
+	Process mem;
+
+	if (!mem.getProcess("GTA5.exe"))
+		std::cout << "Failed to handle Game";
+
+	World world = World(mem.handle);
+	world.updateSub(mem.read<uint64_t>(mem.base + 0x024B0C50));
+
+	world.localPlayer.god(true);
+	world.localPlayer.position.xyz(vec3(1000, 1000, 50));
+	world.localPlayer.weaponManager.currentWeapon.bulletDamage(1000);
+
 	return 0;
 }
